@@ -1,0 +1,47 @@
+spring:
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+  data:
+    mongodb:
+      uri: "mongodb+srv://artyomhayrapetyan001:1234Admin@cluster0.fsfdn4j.mongodb.net/test?retryWrites=true&w=majority"
+      database: greenbank
+      ssl:
+        enabled: true
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: artyom.margaryan.02@gmail.com
+    password: hkitbwoeqpmfvxtf
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+application:
+  security:
+    jwt:
+      secret-key: b105ba10988202f98c84206f4527596f620a0465700592bbafc45fe273bbb33a
+      expiration: 3600000 # 1 hour
+      refresh-token:
+        expiration: 86400000 # 1 day
+server:
+  port: 8080
+
+am:
+  greenbank:
+    helpers:
+      validations:
+        TransactionToValidation:
+          message: "Transactions to field doesn't pass validation"
+    bank:
+      accounts:
+        AMD: "0000000000000000"
+        USD: "0000000000000001"
+        EUR: "0000000000000002"
+        RUB: "0000000000000003"
+    creditworthiness:
+      defaultId: 65e9bdb8b113ef347b0e4f03

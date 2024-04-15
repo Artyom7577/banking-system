@@ -1,0 +1,10 @@
+spring:
+  data:
+    mongodb:
+      uri: "mongodb://localhost:27017"
+      database: greenbank_one
+      ssl:
+        enabled: false
+
+server:
+  port: 7415
